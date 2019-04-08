@@ -82,7 +82,7 @@ confusionMatrix(prediction.rf, testing$classe)$overall['Accuracy']
 
 Thus, the model accurately predicted 99% of the 4904 observations contained in the validation set. 
 
-##Cross Validation 
+##Cross Validation to assess out of sample error rate
 To further assess the model's accuracy I used k-fold cross validation using a method described at http://t-redactyl.io/blog/2015/10/using-k-fold-cross-validation-to-estimate-out-of-sample-accuracy.html
 ```{r}
 k.folds <- function(k) {
@@ -103,4 +103,4 @@ accuracies.dt <- k.folds(5)
 accuracies.dt
 ```
 
-In all 5 of these tests the model also exhibits 99% accuracy thus this model is suitable for classifying dumbbell curl technique from accelerometer readings. 
+In all 5 of these tests the model also exhibits 99% accuracy thus this model is suitable for classifying dumbbell curl technique from accelerometer readings with an expected out of sample error rate of 1%.
