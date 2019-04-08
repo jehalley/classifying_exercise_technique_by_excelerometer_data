@@ -103,4 +103,4 @@ accuracies.dt <- k.folds(5)
 accuracies.dt
 ```
 
-In all 5 of these tests the model also exhibits 99% accuracy thus this model is suitable for classifying dumbbell curl technique from accelerometer readings with an expected out of sample error rate of 1%.
+The mean accuracy of these 5 tests is 99.23% and the average out of sample error rate is .77% thus this model is suitable for classifying dumbbell curl technique from accelerometer readings.
