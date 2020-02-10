@@ -37,7 +37,7 @@ training = data[ inTrain,]
 testing = data[-inTrain,]
 ```
 
-##Creating the Model
+## Creating the Model
 I used Caret's random forest method to train the model because I was concerned about overfitting and I was also interested in identifying the variables that were most important to classifying the repetitions. 
 
 The classification of each lift's technique is recorded in the "classe" variable and since I removed unwanted variables from the training and test data sets I trained the model to predict classe based on all other variables. 
@@ -71,7 +71,7 @@ varImp(modfit.rf)
 
 These results reveal that the "roll_belt" variable are the most important for predicting correct dumbbell curl technique.
 
-##Assessing the model's accuracy
+## Assessing the model's accuracy
 To assess the model's accuracy I used it to predict the classe variable on the "testing" validation data set that I created earlier and then I used confusionMatrix to assess it's accuracy.
 
 ```{r}
@@ -82,7 +82,7 @@ confusionMatrix(prediction.rf, testing$classe)$overall['Accuracy']
 
 Thus, the model accurately predicted 99% of the 4904 observations contained in the validation set. 
 
-##Cross Validation to assess out of sample error rate
+## Cross Validation to assess out of sample error rate
 To further assess the model's accuracy I used k-fold cross validation using a method described at http://t-redactyl.io/blog/2015/10/using-k-fold-cross-validation-to-estimate-out-of-sample-accuracy.html
 ```{r}
 k.folds <- function(k) {
